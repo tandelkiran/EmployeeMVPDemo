@@ -1,0 +1,54 @@
+<div class="container mb-5">
+    <div class="flip-box">
+            <div class="flip-box-inner">
+              <div class="flip-box-front">
+                <h2><br> Show <br> Total <br>Employees</h2>
+              </div>
+              <div class="flip-box-back">
+                <h1><br>{{(employees | async)?.length}}</h1>
+              </div>
+            </div>
+          </div>
+<div class="col-md-6">
+    <div class="col-md-6 mt-3">
+    <a class="btn btn-primary mt-5" routerLink="/employee/empForm"> + CREATE  </a>
+    <!-- search -->
+    
+    <input class="form-control mt-4" id="myInput" type="text" placeholder="search &#61442;" [(ngModel)]="searchText">
+    <span><i class="fa fa-search"></i></span>
+    </div>
+</div>
+<table id="myTable" class="table table-hover table-dark m-1 mt-3 ">
+    <thead style="background-color: seagreen">
+        <tr>
+            <th class="ids" scope="col"> id </th>
+            <th id="fname" scope="col" (click)="sorting(firstName)">FirstName <span><i class="fa fa-sort"></i></span> </th>
+            <th scope="col">Email</th>
+            <th scope="col">Mobile</th>
+            <th scope="col">Address</th>
+            <th scope="col">Gender</th>
+            <th scope="col">DeptName</th>
+            <th scope="col">HireDate</th>
+            <th scope="col">Permenent</th>
+            <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let employee of employees | async">
+            <th scope="row">{{employee.id}}</th>
+            <td>{{employee.firstName}}</td>
+            <td>{{employee.email}}</td>
+            <td>{{employee.mobile}}</td>
+            <td><span style="padding: 2px" *ngFor="let addr of employee.address">{{addr.myAddress}}</span></td>
+            <td>{{employee.gender}}</td>
+            <td>{{employee.deptName}}</td>
+            <td>{{employee.hireDate}}</td>
+            <td>{{employee.permenent}}</td>
+            <td>
+                <a class="m-3" routerLink="/employee/empForm/{{employee.id}}"> <i class="fa fa-edit"></i> </a>
+                <a style="cursor: pointer;color: red" (click)="removeEmployee(employee.id)"><i class="fa fa-trash"></i></a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+</div>
