@@ -51,8 +51,7 @@ export class EmployeeService {
    * update employee 
    * @param employee single employee data
    */
-  updateEmployeeData(employee,id:any) : Observable<Employee> {
-    debugger
+  updateEmployeeData(employee,id:number) : Observable<Employee> {
     return this.http.put<Employee>(`${this.apiUrl}employees/${id}`, employee);
   }
 
@@ -62,5 +61,18 @@ export class EmployeeService {
    */
   removeEmployee(id:number) : Observable<Employee>{
     return this.http.delete<Employee>(`${this.apiUrl}employees/${id}`);
+  }
+
+  /**
+   * search employee
+   * @param employee string of any field to search
+   */
+  searchEmployee(employee:Employee) : Observable<Employee[]>{
+    return this.http.get<Employee[]>(`${this.apiUrl}employees?q=${employee}`);
+  }
+
+  sortEmployee() : Observable<Employee[]>{
+    debugger
+    return this.http.get<Employee[]>(`${this.apiUrl}employees?_sort=firstName&_order=desc`);
   }
 }

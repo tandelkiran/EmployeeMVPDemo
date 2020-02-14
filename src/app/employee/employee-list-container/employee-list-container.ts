@@ -13,6 +13,8 @@ export class EmployeeListContainer implements OnInit {
   //get observable of employees for listing
   employees$ = new Observable<Employee[]>();
 
+  // orderStr:string='';
+  
   constructor(private employeeService: EmployeeService) {
   }
 
@@ -41,5 +43,32 @@ export class EmployeeListContainer implements OnInit {
         }
       });
     }
+  }
+
+   /**
+    * search employee by any field from table
+    * @param searchText text of input search
+    */
+  searchEmployee(searchText){
+    this.employees$=this.employeeService.searchEmployee(searchText);
+  }
+
+  // order(flag)
+  // {
+  //   flag = !flag;
+  //   if(flag)
+  //   {
+  //     this.orderStr='asc';
+  //   }
+  //   else
+  //   {
+  //     this.orderStr='desc';
+  //   }
+  // }
+
+  sortEmployee()
+  {
+    debugger
+    this.employees$=this.employeeService.sortEmployee();
   }
 }

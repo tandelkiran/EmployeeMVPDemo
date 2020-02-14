@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter, OnChanges } from '@angular/core';
-import { FormGroup, FormArray} from '@angular/forms';
+import { FormGroup, FormArray } from '@angular/forms';
 import { Employee } from 'src/app/models/employee';
 import { EmployeeFormPresenter } from '../employee-form-presenter/employee-form.presenter';
 
@@ -7,16 +7,26 @@ import { EmployeeFormPresenter } from '../employee-form-presenter/employee-form.
   selector: 'app-employee-form-presentation-ui',
   templateUrl: './employee-form-presentation.html',
   styleUrls: ['./employee-form-presentation.scss'],
-  providers:[EmployeeFormPresenter]
+  providers: [EmployeeFormPresenter]
 })
 export class EmployeeFormPresentation implements OnInit, OnChanges {
 
   //employee list
-  @Input() employee;
+  private _employees;
+  get employee(): any {
+    debugger
+    return this._employees;
+  }
+  @Input()
+  set employee(val: any) {
+    if (val) {
+      this.employeeForm.patchValue(val);
+    }
+  }
   // event for add employee
   @Output() employeeFormData = new EventEmitter<Employee>();
   // event for update employee
-  @Output() update =new EventEmitter<Employee>();
+  @Output() update = new EventEmitter<Employee>();
 
   employeeObj: Employee; //employee object
   employeeForm: FormGroup; // emloyee form-froup
@@ -38,25 +48,21 @@ export class EmployeeFormPresentation implements OnInit, OnChanges {
     this.employeeForm = this.empFormPresenter.buildEmployeeForm();
   }
 
-  /**
-   * bind employee value to form-controls
-   */
   ngOnChanges() {
-    if (this.employee != undefined) {
-      this.employeeForm.patchValue(this.employee);
-    }
   }
 
   /**
    * add and update employee
    */
   onSubmit() {
-    if (!this.employee) {
+    debugger
+    if (this.employee == undefined) {
+      debugger
       this.empFormPresenter.addEmployee();
       this.employeeFormData.emit(this.empFormPresenter.employeeObj);
     }
-    else
-    {
+    else {
+      debugger
       this.empFormPresenter.updateEmployee();
       this.update.emit(this.empFormPresenter.employeeObj);
     }
@@ -83,6 +89,10 @@ export class EmployeeFormPresentation implements OnInit, OnChanges {
     this.empFormPresenter.addAddress();
   }
 
+/**
+ * delete dynamic control of address
+ * @param index 
+ */
   deleteAddress(index) {
     this.addresses.removeAt(index);
   }

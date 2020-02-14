@@ -15,7 +15,7 @@
     <!-- search -->
     
     <input class="form-control mt-4" id="myInput" type="text" placeholder="search &#61442;"
-     [(ngModel)]="searchText" (keyup)="searchByName($event.target.value)">
+      (keyup)="searchByName($event.target.value)">
     <span><i class="fa fa-search"></i></span>
     </div>
 </div>
@@ -23,7 +23,7 @@
     <thead style="background-color: seagreen">
         <tr>
             <th class="ids" scope="col"> id </th>
-            <th id="fname" scope="col">FirstName <span><i class="fa fa-sort"></i></span> </th>
+            <th class="fname" scope="col" (click)="sortByName(ordertString)">FirstName <span><i class="fa fa-sort"></i></span> </th>
             <th scope="col">Email</th>
             <th scope="col">Mobile</th>
             <th scope="col">Address</th>

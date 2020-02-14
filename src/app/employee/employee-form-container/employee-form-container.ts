@@ -18,7 +18,6 @@ export class EmployeeFormContainer implements OnInit {
   constructor(
     private employeeService:EmployeeService,
     private route: ActivatedRoute,
-    private router:Router,
     private location:Location
   ) { }
 
