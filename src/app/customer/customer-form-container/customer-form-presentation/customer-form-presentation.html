@@ -1,0 +1,56 @@
+<div class="container">
+  <div style="text-align:center">
+    <h1 class="alert-success mt-3">
+      Excercise with Dynamic-Component,Directive and Pipe
+    </h1>
+    <marquee direction="down" style="font-size: 20px;text-align:center;height: 50px;" class="alert-danger mt-3">
+      Click on Add Button to Create Dynamic Component
+    </marquee>
+  </div>
+</div>
+
+<div class="container mt-3 mb-5" style="text-align:center">
+  <div class="row">
+    <div class="col-sm">
+      <h3>Component Factory</h3>
+      <div>
+        <button class="btn btn-primary mt-3 ml-3" (click)="addComponentFactory()"> Add </button><br>
+        <button class="btn btn-danger mt-3 ml-3" (click)="closeComponentFactory()">Close</button>
+      </div>
+      <div>
+        <ng-template #componentFactoryContainer></ng-template>
+      </div>
+    </div>
+    <div class="col-sm">
+      <h3>CDK Portal</h3>
+      <div>
+        <button class="btn btn-primary mt-3 ml-3" (click)="selectedPortal = componentPortal"> Add </button><br>
+        <button class="btn btn-danger mt-3 ml-3" (click)="closeCDKPortal()">Close</button>
+      </div>
+      <div>
+        <!-- <ng-template cdkPortalOutlet>
+                <p>The content of this template is captured by the portal.</p>
+              </ng-template> -->
+        <!-- 2 -->
+        <h5>The portal outlet is below:</h5>
+        <div class="example-portal-outlet">
+          <ng-template [cdkPortalOutlet]="selectedPortal"></ng-template>
+          <!-- <ng-template cdkPortalOutlet="selectedPortal"></ng-template> -->
+
+        </div>
+        <ng-template #cdkPortalContent>Hello, this is a template portal</ng-template>
+      </div>
+    </div>
+    <div class="col-sm">
+      <h3>Overlay</h3>
+      <div>
+          <button class="btn btn-primary mt-3 ml-3" (click)="showGlobalOverlay()">Show global overlay</button>
+        <button class="btn btn-primary mt-3 ml-3" (click)="addOverlay()"> Add </button><br>
+        <button class="btn btn-danger mt-3 ml-3" (click)="closeOverlay()">Close</button>
+        <button (click)="openRotiniPanel()">
+            Pasta 1
+          </button>
+      </div>
+    </div>
+  </div>
+</div>
