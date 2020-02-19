@@ -1,0 +1,17 @@
+/* @group Blink */
+
+.blink {
+    cursor: pointer;
+	-webkit-animation: blink .75s linear infinite;
+	-moz-animation: blink .75s linear infinite;
+	-ms-animation: blink .75s linear infinite;
+	-o-animation: blink .75s linear infinite;
+	 animation: blink .9s linear infinite;
+}
+
+@keyframes blink {
+	0% { opacity: 0; }
+	50% { opacity: .5; }
+	50.01% { opacity: .7; }
+	100% { opacity: 1; }
+}

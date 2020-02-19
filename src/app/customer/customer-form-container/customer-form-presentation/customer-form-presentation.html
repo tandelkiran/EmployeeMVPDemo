@@ -1,0 +1,47 @@
+<div class="container">
+  <div style="text-align:center">
+    <h3 class="alert-success mt-3">
+      <a class="alert-danger mt-3" style="float: left;" routerLink="directoryDemo">=>Go to Directive</a>
+      <a class="alert-danger mt-3" style="float: right;" routerLink="pipeDemo">=>Go to Pipe</a>
+    </h3>
+    <marquee direction="down" style="font-size: 20px;text-align:center;height: 50px;" class="alert-danger mt-3">
+      Click on Add Button to Create Dynamic Component
+    </marquee>
+  </div>
+</div>
+
+<div class="container mt-3 mb-5" style="text-align:center">
+  <div class="row">
+    <div class="col-sm">
+      <!-- 1 -->
+      <h3>Component Factory <sub style="color: gree;background-color: chartreuse;border-radius: 100px">done</sub></h3>
+      <div>
+        <button class="btn btn-primary mt-3 ml-3" (click)="addComponentFactory()"> Add </button><br>
+        <button class="btn btn-danger mt-3 ml-3" (click)="closeComponentFactory()">Close</button>
+      </div>
+      <div>
+        <ng-template #componentFactoryContainer></ng-template>
+      </div>
+    </div>
+    <!-- 2 -->
+    <div class="col-sm">
+      <h3>CDK Portal <sub style="color: gree;background-color: chartreuse;border-radius: 100px">done</sub></h3>
+      <div>
+        <button class="btn btn-primary mt-3 ml-3" (click)="addCDKPortal()"> Add </button><br>
+        <button class="btn btn-danger mt-3 ml-3" (click)="closeCDKPortal()">Close</button>
+      </div>
+      <div>
+        <div class="example-portal-outlet">
+          <ng-template [cdkPortalOutlet]="selectedPortal"></ng-template>
+        </div>
+      </div>
+    </div>
+    <!-- 3 -->
+    <div class="col-sm">
+      <h3>Overlay <sub style="color: gree;background-color: chartreuse;border-radius: 100px">done</sub></h3>
+      <div>
+        <button class="btn btn-primary mt-3 ml-3" (click)="addOverlay()"> Add </button><br>
+        <button class="btn btn-danger mt-3 ml-3" (click)="closeOverlay()">Close</button>
+      </div>
+    </div>
+  </div>
