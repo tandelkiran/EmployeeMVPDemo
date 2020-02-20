@@ -3,13 +3,15 @@ export class Employee {
     firstName: string;
     email: string;
     mobile: number;
-    address: string;
+    address?: Address[];
     gender: string;
     deptName: string;
-    hireDate:Date;
-    permenent:string;
+    hireDate: Date;
+    permenent: string;
 }
 
-export class Address{
-    myaddress:string;
+export class Address {
+    city: string;
+    state: string;
+    pinCode: number;
 }

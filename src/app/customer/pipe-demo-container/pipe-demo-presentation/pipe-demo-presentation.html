@@ -1,11 +1,18 @@
 <div class="container">
     <div style="text-align:center">
-        <!-- <h3 class="alert-success mt-3">
-            <a class="alert-danger mt-3" style="float: left;" routerLink="directoryDemo">=>Go to Directive</a>
-            <a class="alert-danger mt-3" style="float: right;" routerLink="pipeDemo">=>Go to Pipe</a>
-        </h3> -->
         <marquee direction="down" style="font-size: 20px;text-align:center;height: 50px;" class="alert-primary mt-3">
             <p>Pipe Demo</p>
         </marquee>
+
+        <div style="background-color: lightskyblue">
+            <h3>Emoji : </h3>
+            Smile:<input  type="radio" [(ngModel)]="value" value="smile" name="emoji" (change)="onItemChange($event.target.value)" ><br>
+            Sad :<input type="radio" [(ngModel)]="value" value="sad" name="emoji" (change)="onItemChange($event.target.value)" ><br>
+            Angry:<input type="radio" [(ngModel)]="value" value="angry" name="emoji" (change)="onItemChange($event.target.value)" ><br>
+        </div>
+        <div>
+            <h3>Values</h3>
+            <h1>{{value | emojiPipe}}</h1>
+        </div>
     </div>
 </div>

@@ -41,7 +41,11 @@
         <td>{{employee.firstName}}</td>
         <td>{{employee.email}}</td>
         <td>{{employee.mobile}}</td>
-        <td><span style="padding: 2px" *ngFor="let addr of employee.address">{{addr.myAddress}}</span></td>
+        <td><span style="padding: 2px" *ngFor="let addr of employee.address">
+            <span style="color: orange">{{addr.city}}</span>{{addr.state}}
+            <span style="color: greenyellow">{{addr.pinCode}}</span>
+          </span>
+        </td>
         <td>{{employee.gender}}</td>
         <td>{{employee.deptName}}</td>
         <td>{{employee.hireDate}}</td>

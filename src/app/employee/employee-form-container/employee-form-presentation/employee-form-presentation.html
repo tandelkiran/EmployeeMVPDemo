@@ -36,7 +36,7 @@
             </div>
 
             <!-- address -->
-            <div formArrayName="address">
+            <!-- <div formArrayName="address">
                 <div *ngFor="let item of addresses.controls; let indexVal=index" [formGroupName]="indexVal">
                     <label>
                         Address: <input formControlName="myAddress" />
@@ -45,6 +45,20 @@
                         (click)="deleteAddress(indexVal)"><i class="fa fa-trash"></i></button>
                 </div>
                 <button class="btn-large btn-success" type="button" (click)="addAddress()">Add</button>
+            </div> -->
+
+            <!-- 3 -->
+            <button class="btn btn-success" (click)="addNewAddress()">Add</button><br>
+            <div class="form-group" formArrayName="address" *ngFor="let add of employeeForm.get('address').controls ; let i = index;">
+                <div class="row" [formGroupName]="i+1">
+                    <label>City</label>
+                    <input type="text" formControlName="city" placeholder="city" size="30" class="form-control col-12">
+                    <label>State</label>
+                    <input type="text" formControlName="state" placeholder="state" size="30" class="form-control col-12">
+                    <label>Pin</label>
+                    <input type="text" formControlName="pinCode" placeholder="pin code" size="30" class="form-control col-12">
+                </div>
+                <button class="btn-large btn-danger" (click)="removeAddress(i)"><i class="fa fa-trash"></i></button>
             </div>
 
             <!-- gender -->

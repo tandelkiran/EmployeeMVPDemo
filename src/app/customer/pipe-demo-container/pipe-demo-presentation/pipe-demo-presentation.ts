@@ -7,9 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PipeDemoPresentation implements OnInit {
 
-  constructor() { }
+  values:string;
+  constructor() { 
+    
+  }
 
   ngOnInit() {
+    // console.log('vQQ'+this.values);
   }
+  onItemChange(selectedValue){
+    debugger
+    
+    this.values=selectedValue;
+    alert(this.values);
+    // console.log(" Value is : ", value );
+ }
 
 }

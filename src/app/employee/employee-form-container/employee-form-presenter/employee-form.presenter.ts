@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormArray } from '@angular/forms';
 import { Employee } from 'src/app/models/employee';
-import { Observable } from 'rxjs';
 
 @Injectable()
 
 export class EmployeeFormPresenter {
   employeeObj: Employee;
   employeeForm: FormGroup;
+  public address: FormArray;
 
   constructor(private formBuilder: FormBuilder) {
   }
@@ -17,7 +17,7 @@ export class EmployeeFormPresenter {
       firstName: ['', [Validators.required, Validators.maxLength(20)]],
       email: ['', [Validators.required]],
       mobile: ['', [Validators.required, Validators.maxLength(10)]],
-      address: this.formBuilder.array([this.formBuilder.group({ myAddress: '' })]),
+      address: this.formBuilder.array([this.buildAddresses()]),
       gender: ['', [Validators.required]],
       deptName: ['', [Validators.required]],
       hireDate: ['', [Validators.required]],
@@ -25,23 +25,22 @@ export class EmployeeFormPresenter {
     });
   }
 
-  get addresses() {
-    return this.buildEmployeeForm().get('address') as FormArray;
+  /**
+   * add address
+   */
+  public addAddress(): void {
+    debugger
+    this.address = this.employeeForm.get('address') as FormArray;
+    this.address.push(this.buildAddresses());
   }
 
   /**
-   * adds dynamic form-control of address
+   * remove address
+   * @param index get formgroup id to remove address
    */
-  public addAddress() {
-    this.addresses.push(this.formBuilder.group({ myAddress: '' }));
-  }
-
-  /**
-   * remove address form-control
-   * @param index id of address form-control
-   */
-  public deleteAddress(index): void {
-    this.addresses.removeAt(index);
+  public removeGroup(index: number): void {
+    const control = <FormArray>this.employeeForm.controls['address'];
+    control.removeAt(index);
   }
 
   /**
@@ -61,5 +60,16 @@ export class EmployeeFormPresenter {
     if (this.employeeForm.valid) {
       this.employeeObj = this.employeeForm.value;
     }
+  }
+
+  /**
+   * create a dynamic addresses
+   */
+  private buildAddresses(): FormGroup {
+    return this.formBuilder.group({
+      city: [''],
+      state: [''],
+      pinCode: ['']
+    });
   }
 }

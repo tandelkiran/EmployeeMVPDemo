@@ -92,16 +92,18 @@ export class EmployeeFormPresentation implements OnInit {
   /**
    * adds dynamic form-control of address
    */
-  public addAddress(): void {
+  addNewAddress():void
+  {
+    debugger
     this.employeeFormPresenter.addAddress();
-    // this.employeeFormPresenter.addresses.push(this.formBuilder.group({ myAddress: '' }));
   }
 
   /**
    * delete dynamic control of address
    * @param index 
    */
-  public deleteAddress(index): void {
-    this.addresses.removeAt(index);
+  removeAddress(index:number):void
+  {
+    this.employeeFormPresenter.removeGroup(index);
   }
 }

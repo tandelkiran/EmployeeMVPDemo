@@ -7,10 +7,9 @@
       "mobile": "9934567856",
       "address": [
         {
-          "myAddress": "valsad"
-        },
-        {
-          "myAddress": "dungri"
+          "city": "valsad",
+          "state":"vvv",
+          "pinCode":234234
         }
       ],
       "gender": "male",
@@ -24,10 +23,9 @@
       "mobile": "5656454343",
       "address": [
         {
-          "myAddress": "valsad"
-        },
-        {
-          "myAddress": "dungri"
+          "city": "valsad",
+          "state":"vvv",
+          "pinCode":234234
         }
       ],
       "gender": "male",
@@ -42,10 +40,9 @@
       "mobile": "6786798678",
       "address": [
         {
-          "myAddress": "valsad"
-        },
-        {
-          "myAddress": "dungri"
+          "city": "valsad",
+          "state":"vvv",
+          "pinCode":234234
         }
       ],
       "gender": "male",
@@ -60,10 +57,9 @@
       "mobile": "7878789090",
       "address": [
         {
-          "myAddress": "valsad"
-        },
-        {
-          "myAddress": "dungri"
+          "city": "valsad",
+          "state":"vvv",
+          "pinCode":234234
         }
       ],
       "gender": "female",
@@ -78,10 +74,9 @@
       "mobile": "9999900000",
       "address": [
         {
-          "myAddress": "atul"
-        },
-        {
-          "myAddress": "abc"
+          "city": "valsad",
+          "state":"vvv",
+          "pinCode":234234
         }
       ],
       "gender": "male",
@@ -96,7 +91,9 @@
       "mobile": "1111111111",
       "address": [
         {
-          "myAddress": "vapi"
+          "city": "valsad",
+          "state":"vvv",
+          "pinCode":234234
         }
       ],
       "gender": "male",
@@ -111,7 +108,9 @@
       "mobile": "4545454545",
       "address": [
         {
-          "myAddress": "navsari"
+          "city": "valsad",
+          "state":"vvv",
+          "pinCode":234234
         }
       ],
       "gender": "female",
@@ -126,7 +125,9 @@
       "mobile": "9856734657",
       "address": [
         {
-          "myAddress": "MP"
+          "city": "valsad",
+          "state":"vvv",
+          "pinCode":234234
         }
       ],
       "gender": "male",
@@ -141,7 +142,9 @@
       "mobile": "9856734657",
       "address": [
         {
-          "myAddress": "MP"
+          "city": "valsad",
+          "state":"vvv",
+          "pinCode":234234
         }
       ],
       "gender": "male",
@@ -156,7 +159,9 @@
       "mobile": "4567888999",
       "address": [
         {
-          "myAddress": "valsad"
+          "city": "valsad",
+          "state":"vvv",
+          "pinCode":234234
         }
       ],
       "gender": "male",
@@ -164,81 +169,6 @@
       "hireDate": "2019-10-27",
       "permenent": true,
       "id": 10
-    },
-    {
-      "firstName": "kiran1",
-      "email": "kiran1@gmail.com",
-      "mobile": "567898909",
-      "address": [
-        {
-          "myAddress": "vapi"
-        }
-      ],
-      "gender": "male",
-      "deptName": "ML",
-      "hireDate": "2019-11-11",
-      "permenent": true,
-      "id": 11
-    },
-    {
-      "firstName": "shreyu",
-      "email": "shreyu@gmail.com",
-      "mobile": "567898909",
-      "address": [
-        {
-          "myAddress": "vapi"
-        }
-      ],
-      "gender": "male",
-      "deptName": "ML",
-      "hireDate": "2019-11-11",
-      "permenent": true,
-      "id": 12
-    },
-    {
-      "firstName": "james",
-      "email": "james@gmail.com",
-      "mobile": "4567898989",
-      "address": [
-        {
-          "myAddress": "navsari"
-        }
-      ],
-      "gender": "male",
-      "deptName": "Angular",
-      "hireDate": "2019-10-14",
-      "permenent": true,
-      "id": 13
-    },
-    {
-      "firstName": "jayesh",
-      "email": "jayesh@gmail.com",
-      "mobile": "4545454545",
-      "address": [
-        {
-          "myAddress": "navsari"
-        }
-      ],
-      "gender": "male",
-      "deptName": "UI",
-      "hireDate": "2020-02-07",
-      "permenent": true,
-      "id": 14
-    },
-    {
-      "firstName": "jerry",
-      "email": "jerry@gmail.com",
-      "mobile": "4567898980",
-      "address": [
-        {
-          "myAddress": "udvada"
-        }
-      ],
-      "gender": "male",
-      "deptName": "UI",
-      "hireDate": "2019-12-02",
-      "permenent": true,
-      "id": 15
     }
   ],
   "department": [
