@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container mb-5">
     <div style="text-align:center">
         <marquee direction="down" style="font-size: 20px;text-align:center;height: 50px;" class="alert-primary mt-3">
             <p>Pipe Demo</p>
@@ -6,13 +6,49 @@
 
         <div style="background-color: lightskyblue">
             <h3>Emoji : </h3>
-            Smile:<input  type="radio" [(ngModel)]="value" value="smile" name="emoji" (change)="onItemChange($event.target.value)" ><br>
-            Sad :<input type="radio" [(ngModel)]="value" value="sad" name="emoji" (change)="onItemChange($event.target.value)" ><br>
-            Angry:<input type="radio" [(ngModel)]="value" value="angry" name="emoji" (change)="onItemChange($event.target.value)" ><br>
+            Smile:<input type="radio" [(ngModel)]="value" value="smile" name="emoji"
+                (change)="onItemChange($event.target.value)"><br>
+            Sad :<input type="radio" [(ngModel)]="value" value="sad" name="emoji"
+                (change)="onItemChange($event.target.value)"><br>
+            Angry:<input type="radio" [(ngModel)]="value" value="angry" name="emoji"
+                (change)="onItemChange($event.target.value)"><br>
         </div>
-        <div>
+        <div style="background-color: lightblue">
             <h3>Values</h3>
             <h1>{{value | emojiPipe}}</h1>
         </div>
+    </div>
+    <div>
+        <h2>2. USING PIPES</h2>
+        <!-- employee list table -->
+        <table border="1" style="border-color: crimson" id="myTable"
+            class="table table-hover table-red m-1 mt-3 mb-5 mb-5">
+            <thead style="background-color: chartreuse">
+                <tr>
+                    <th scope="col">Code</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Salary</th>
+                    <th scope="col">DOB</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let user of users">
+                    <td>{{user.code}}</td>
+                    <td>{{user.name | uppercase}}</td>
+                    <td>{{user.salary | currency:'INR' }}</td>
+                    <td>{{user.dob | date:'shortDate'}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="mb-5">
+        <input type="text" [(ngModel)]="txtInput" />
+        <h1 [ngPlural]="txtInput">
+            <ng-template ngPluralCase="=0">Zero</ng-template>
+            <ng-template ngPluralCase="=1">One</ng-template>
+            <ng-template ngPluralCase="=2">Two</ng-template>
+            <ng-template ngPluralCase="=3">Three</ng-template>
+            <ng-template ngPluralCase="">Other</ng-template>
+        </h1>
     </div>
 </div>

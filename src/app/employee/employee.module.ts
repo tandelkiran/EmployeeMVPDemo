@@ -8,10 +8,11 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { EmployeeListContainer } from './employee-list-container/employee-list-container';
 import { EmployeeListPresentation } from './employee-list-container/employee-list-presentation/employee-list-presentation';
 import { EmployeeService } from './employee.service';
+import { ArrowDirective } from './directives/arrow.directive';
 
 
 @NgModule({
-  declarations: [EmployeeFormContainer, EmployeeFormPresentation, EmployeeListContainer, EmployeeListPresentation],
+  declarations: [EmployeeFormContainer, EmployeeFormPresentation, EmployeeListContainer, EmployeeListPresentation, ArrowDirective],
   imports: [
     CommonModule,
     EmployeeRoutingModule,

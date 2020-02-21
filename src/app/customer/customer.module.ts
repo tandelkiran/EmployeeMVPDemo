@@ -11,13 +11,12 @@ import { PipeDemoContainer } from './pipe-demo-container/pipe-demo-container';
 import { DirectiveDemoContainer } from './directive-demo-container/directive-demo-container';
 import { PipeDemoPresentation } from './pipe-demo-container/pipe-demo-presentation/pipe-demo-presentation';
 import { DirectiveDemoPresentation } from './directive-demo-container/directive-demo-presentation/directive-demo-presentation';
-import { EmojiDirective } from './directives/emoji.directive';
-import { EmojiPipePipe } from './pipes/emoji-pipe.pipe';
+import { EmojiPipe } from './pipes/emoji.pipe';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [CustomerFormContainer, CustomerFormPresentation, DynamicComponent, PipeDemoContainer, 
-    DirectiveDemoContainer, PipeDemoPresentation, DirectiveDemoPresentation, EmojiDirective, EmojiPipePipe],
+    DirectiveDemoContainer, PipeDemoPresentation, DirectiveDemoPresentation, EmojiPipe],
   imports: [
     CommonModule,
     CustomerRoutingModule,
