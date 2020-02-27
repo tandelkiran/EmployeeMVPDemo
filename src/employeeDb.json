@@ -8,8 +8,8 @@
       "address": [
         {
           "city": "valsad",
-          "state":"vvv",
-          "pinCode":234234
+          "state": "vvv",
+          "pinCode": 234234
         }
       ],
       "gender": "male",
@@ -24,8 +24,8 @@
       "address": [
         {
           "city": "valsad",
-          "state":"vvv",
-          "pinCode":234234
+          "state": "vvv",
+          "pinCode": 234234
         }
       ],
       "gender": "male",
@@ -41,8 +41,8 @@
       "address": [
         {
           "city": "valsad",
-          "state":"vvv",
-          "pinCode":234234
+          "state": "vvv",
+          "pinCode": 234234
         }
       ],
       "gender": "male",
@@ -58,8 +58,8 @@
       "address": [
         {
           "city": "valsad",
-          "state":"vvv",
-          "pinCode":234234
+          "state": "vvv",
+          "pinCode": 234234
         }
       ],
       "gender": "female",
@@ -75,8 +75,8 @@
       "address": [
         {
           "city": "valsad",
-          "state":"vvv",
-          "pinCode":234234
+          "state": "vvv",
+          "pinCode": 234234
         }
       ],
       "gender": "male",
@@ -92,8 +92,8 @@
       "address": [
         {
           "city": "valsad",
-          "state":"vvv",
-          "pinCode":234234
+          "state": "vvv",
+          "pinCode": 234234
         }
       ],
       "gender": "male",
@@ -109,8 +109,8 @@
       "address": [
         {
           "city": "valsad",
-          "state":"vvv",
-          "pinCode":234234
+          "state": "vvv",
+          "pinCode": 234234
         }
       ],
       "gender": "female",
@@ -126,8 +126,8 @@
       "address": [
         {
           "city": "valsad",
-          "state":"vvv",
-          "pinCode":234234
+          "state": "vvv",
+          "pinCode": 234234
         }
       ],
       "gender": "male",
@@ -143,8 +143,13 @@
       "address": [
         {
           "city": "valsad",
-          "state":"vvv",
-          "pinCode":234234
+          "state": "vvv",
+          "pinCode": 234234
+        },
+        {
+          "city": "",
+          "state": "",
+          "pinCode": ""
         }
       ],
       "gender": "male",
@@ -159,9 +164,9 @@
       "mobile": "4567888999",
       "address": [
         {
-          "city": "valsad",
-          "state":"vvv",
-          "pinCode":234234
+          "city": "",
+          "state": "",
+          "pinCode": ""
         }
       ],
       "gender": "male",
@@ -169,6 +174,23 @@
       "hireDate": "2019-10-27",
       "permenent": true,
       "id": 10
+    },
+    {
+      "firstName": "ricky",
+      "email": "ricky@gmail.com",
+      "mobile": "5678678787",
+      "address": [
+        {
+          "city": "jaypur",
+          "state": "jjj",
+          "pinCode": "234234"
+        }
+      ],
+      "gender": "male",
+      "deptName": "UI",
+      "hireDate": "2020-02-19",
+      "permenent": true,
+      "id": 11
     }
   ],
   "department": [
@@ -177,5 +199,21 @@
     ".Net",
     "ML",
     "Networking"
+  ],
+  "customers":[
+    {
+      "id":1,
+      "CustomerName":"kiran",
+      "Address":"dandi",
+      "City":"valsad",
+      "MobileNo":8678123212
+    },
+    {
+      "id":1,
+      "CustomerName":"ketan",
+      "Address":"dungri",
+      "City":"valsad",
+      "MobileNo":6786745656
+    }
   ]
 }

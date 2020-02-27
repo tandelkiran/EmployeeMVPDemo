@@ -3,11 +3,12 @@ import { Routes, RouterModule } from '@angular/router';
 import { CustomerFormContainer } from './customer-form-container/customer-form-container';
 import { PipeDemoContainer } from './pipe-demo-container/pipe-demo-container';
 import { DirectiveDemoContainer } from './directive-demo-container/directive-demo-container';
+import { CustomerListContainer } from './customer-list-container/customer-list-container';
 
 
 const routes: Routes = [
   {
-    path : '' , component : CustomerFormContainer
+    path : '' , component : CustomerListContainer
   },
   {
     path : 'pipeDemo' , component : PipeDemoContainer

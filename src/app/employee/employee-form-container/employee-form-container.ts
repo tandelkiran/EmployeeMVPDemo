@@ -1,10 +1,10 @@
-import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { Observable } from 'rxjs';
 
-import { Employee } from 'src/app/models/employee';
 import { Department } from 'src/app/models/department';
+import { Employee } from 'src/app/models/employee';
 import { EmployeeService } from '../employee.service';
 
 @Component({
@@ -41,7 +41,7 @@ export class EmployeeFormContainer implements OnInit {
   /**
    * fetch all departments
    */
-  public getDepartments(){
+  public getDepartments() : void{
     this.department$=this.employeeService.getAllDepartments();
   }
 
@@ -49,7 +49,7 @@ export class EmployeeFormContainer implements OnInit {
    * add employee
    * @param employee employee detail
    */
-  public addEmployee(employee: Employee) {
+  public addEmployee(employee: Employee) : void {
     this.employeeService.addEmployeeData(employee).subscribe(data => {
       if (data) {
         alert('Record Inserted...!!!');
@@ -65,7 +65,7 @@ export class EmployeeFormContainer implements OnInit {
    * update employee
    * @param employee employee detail
    */
-  public updateEmployee(employee: Employee) {
+  public updateEmployee(employee: Employee) : void {
     if (this.empId) {
       this.employeeService.updateEmployeeData(employee, this.empId).subscribe(data => {
         if (data) {

@@ -1,5 +1,6 @@
-import { Injectable } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormArray } from '@angular/forms';
+import { Injectable } from '@angular/core';
+
 import { Employee } from 'src/app/models/employee';
 
 @Injectable()
@@ -46,7 +47,7 @@ export class EmployeeFormPresenter {
   /**
    * add employee
    */
-  public addEmployee() {
+  public addEmployee(): void {
     if (this.employeeForm.valid) {
       this.employeeObj = new Employee();
       this.employeeObj = this.employeeForm.value;
@@ -56,7 +57,7 @@ export class EmployeeFormPresenter {
   /**
    * update employee
    */
-  public updateEmployee() {
+  public updateEmployee(): void {
     if (this.employeeForm.valid) {
       this.employeeObj = this.employeeForm.value;
     }

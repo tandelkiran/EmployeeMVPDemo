@@ -12,14 +12,14 @@ import { Department } from '../models/department';
 export class EmployeeService {
 
   // employee api url....'http://localhost:3000/employees'
-  public apiUrl: string;
+  private apiUrl: string;
 
   // department url...'http://localhost:3000/department'
-  public deptUrl: string;
+  private deptUrl: string;
 
   constructor(private http: HttpClient) {
-    this.apiUrl = environment.baseUrl;
-    this.deptUrl = environment.deptUrl;
+    this.apiUrl = environment.baseUrl+'employees';
+    this.deptUrl = environment.baseUrl+'department';
   }
 
   /**

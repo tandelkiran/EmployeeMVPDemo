@@ -1,9 +1,9 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormArray } from '@angular/forms';
+import { Observable } from 'rxjs';
 
 import { Employee } from 'src/app/models/employee';
 import { EmployeeFormPresenter } from '../employee-form-presenter/employee-form.presenter';
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-employee-form-presentation-ui',
@@ -14,9 +14,9 @@ import { Observable } from 'rxjs';
 
 export class EmployeeFormPresentation implements OnInit {
 
-  public isFormSubmitted : boolean;
+  public isFormSubmitted: boolean;
   //employee list
-  private _employees : Observable<Employee[]>;
+  private _employees: Observable<Employee[]>;
 
   get employee(): any {
     debugger
@@ -53,7 +53,7 @@ export class EmployeeFormPresentation implements OnInit {
   /**
    * get employee form-controls
    */
-  get employeeFormControls() { return this.employeeForm.controls; }
+  get controls() { return this.employeeForm.controls; }
 
   /**
    * build employee form
@@ -70,23 +70,20 @@ export class EmployeeFormPresentation implements OnInit {
     if (this.employeeForm.invalid) {
       return;
     }
-    if (this.employeeForm.valid) {
-      if (!this._employees) {
-        this.employeeFormPresenter.addEmployee();
-        this.add.emit(this.employeeFormPresenter.employeeObj);
-      }
-      else {
-        this.employeeFormPresenter.updateEmployee();
-        this.update.emit(this.employeeFormPresenter.employeeObj);
-      }
+    if (!this._employees) {
+      this.employeeFormPresenter.addEmployee();
+      this.add.emit(this.employeeFormPresenter.employeeObj);
+    }
+    else {
+      this.employeeFormPresenter.updateEmployee();
+      this.update.emit(this.employeeFormPresenter.employeeObj);
     }
   }
 
   /**
    * adds dynamic form-control of address
    */
-  addNewAddress():void
-  {
+  public addNewAddress(): void {
     this.employeeFormPresenter.addAddress();
   }
 
@@ -94,8 +91,7 @@ export class EmployeeFormPresentation implements OnInit {
    * delete dynamic control of address
    * @param index 
    */
-  removeAddress(index:number):void
-  {
+  public removeAddress(index: number): void {
     this.employeeFormPresenter.removeGroup(index);
   }
 }

@@ -1,15 +1,21 @@
-import { Directive, ElementRef, HostListener } from '@angular/core';
+import { Directive, ElementRef, HostListener, Input } from '@angular/core';
 
 @Directive({
   selector: '[appArrow]'
 })
 export class ArrowDirective {
 
-  constructor(private el: ElementRef) { 
-    // this.el.nativeElement.innerHTML = '<span><i class="fa fa-arrow-down"></i></span>';
+  @Input() flag = true;
+  constructor(private element: ElementRef) {
   }
+
   @HostListener('click') onClick() {
-    debugger
-    this.el.nativeElement.innerHTML = '<span><i class="fa fa-arrow-down"></i></span>';
+    this.flag = !this.flag
+    if (this.flag) {
+      this.element.nativeElement.innerHTML = '<span><i class="fa fa-arrow-down"></i></span>';
+    }
+    else {
+      this.element.nativeElement.innerHTML = '<span><i class="fa fa-arrow-up"></i></span>';
+    }
   }
 }

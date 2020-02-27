@@ -49,7 +49,6 @@ export class EmployeeListPresentation implements OnInit {
    */
   public sortByName(): void {
     this.flag = !this.flag;
-    console.log(this.flag);
     this.sort.emit(this.employees);
     this.order.emit(this.flag);
   }

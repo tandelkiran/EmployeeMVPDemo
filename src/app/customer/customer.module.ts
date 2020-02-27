@@ -13,10 +13,12 @@ import { PipeDemoPresentation } from './pipe-demo-container/pipe-demo-presentati
 import { DirectiveDemoPresentation } from './directive-demo-container/directive-demo-presentation/directive-demo-presentation';
 import { EmojiPipe } from './pipes/emoji.pipe';
 import { FormsModule } from '@angular/forms';
+import { CustomerListContainer } from './customer-list-container/customer-list-container';
+import { CustomerListPresentation } from './customer-list-container/customer-list-presentation/customer-list-presentation';
 
 @NgModule({
-  declarations: [CustomerFormContainer, CustomerFormPresentation, DynamicComponent, PipeDemoContainer, 
-    DirectiveDemoContainer, PipeDemoPresentation, DirectiveDemoPresentation, EmojiPipe],
+  declarations: [CustomerFormContainer, CustomerFormPresentation, DynamicComponent, PipeDemoContainer,
+    DirectiveDemoContainer, PipeDemoPresentation, DirectiveDemoPresentation, EmojiPipe, CustomerListContainer, CustomerListPresentation],
   imports: [
     CommonModule,
     CustomerRoutingModule,
@@ -24,6 +26,7 @@ import { FormsModule } from '@angular/forms';
     PortalModule,
     OverlayModule
   ],
+  exports:[CustomerListPresentation],
   entryComponents: [DynamicComponent]
 })
 export class CustomerModule { }
